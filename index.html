@@ -3,898 +3,104 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Immune Shield | How Your Body Fights Disease</title>
-<meta name="description" content="An interactive science fair exploration of the human immune system, disease prevention, and vaccines.">
+<title>Immune Shield | COVID-19 Science Fair</title>
+<meta name="description" content="A professional Year 9 Science Fair website focused only on COVID-19, immunity, prevention, evidence, public health, and Islamic reflection.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<!-- ============ LOADING SCREEN ============ -->
-<div id="loading-screen" aria-hidden="true">
-  <div class="loader-content">
-    <svg class="loader-cell" viewBox="0 0 100 100" width="90" height="90">
-      <circle cx="50" cy="50" r="38" class="loader-cell-body"/>
-      <circle cx="38" cy="42" r="7" class="loader-nucleus"/>
-      <circle cx="60" cy="55" r="5" class="loader-nucleus"/>
-      <circle cx="55" cy="35" r="4" class="loader-nucleus"/>
-    </svg>
-    <p class="loader-text">Priming your immune response<span class="dots"><span>.</span><span>.</span><span>.</span></span></p>
-    <div class="loader-bar"><div class="loader-bar-fill" id="loader-bar-fill"></div></div>
-  </div>
-</div>
-
-<!-- ============ BACKGROUND CANVASES ============ -->
-<canvas id="particle-canvas" aria-hidden="true"></canvas>
-
-<!-- ============ SKIP LINK ============ -->
-<a href="#main-content" class="skip-link">Skip to content</a>
-
-<!-- ============ NAVIGATION ============ -->
-<header class="site-header" id="site-header">
-  <nav class="navbar glass" aria-label="Primary navigation">
-    <a href="#home" class="brand" data-route="home">
-      <svg viewBox="0 0 40 40" class="brand-mark" aria-hidden="true">
-        <path d="M20 3 L34 10 V21 C34 30 28 35 20 37 C12 35 6 30 6 21 V10 Z" class="brand-shield"/>
-        <path d="M13 20 L18 25 L27 14" class="brand-check"/>
-      </svg>
-      <span>Immune<em>Shield</em></span>
-    </a>
-
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
-    </button>
-
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#home" data-route="home">Home</a></li>
-      <li><a href="#immune" data-route="immune">Immune System</a></li>
-      <li><a href="#diseases" data-route="diseases">Diseases</a></li>
-      <li><a href="#vaccines" data-route="vaccines">Vaccines</a></li>
-      <li><a href="#prevention" data-route="prevention">Prevention</a></li>
-      <li><a href="#quiz" data-route="quiz">Quiz</a></li>
-      <li><a href="#islam" data-route="islam">Islam &amp; Health</a></li>
-      <li><a href="#sources" data-route="sources">Sources</a></li>
-    </ul>
-
-    <div class="nav-tools">
-      <button id="search-toggle" class="icon-btn" title="Search" aria-label="Open search">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      </button>
-      <button id="glossary-toggle" class="icon-btn" title="Glossary" aria-label="Open glossary">
-        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg>
-      </button>
-      <button id="sound-toggle" class="icon-btn" title="Toggle sound" aria-label="Toggle sound">
-        <svg viewBox="0 0 24 24" id="sound-icon"><polygon points="4,9 8,9 12,5 12,19 8,15 4,15"/><path d="M16 8a5 5 0 0 1 0 8"/></svg>
-      </button>
-      <button id="theme-toggle" class="icon-btn" title="Toggle theme" aria-label="Toggle light/dark theme">
-        <svg viewBox="0 0 24 24" id="theme-icon"><circle cx="12" cy="12" r="5"/><g class="rays"><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.2" y1="4.2" x2="5.6" y2="5.6"/><line x1="18.4" y1="18.4" x2="19.8" y2="19.8"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.2" y1="19.8" x2="5.6" y2="18.4"/><line x1="18.4" y1="5.6" x2="19.8" y2="4.2"/></g></svg>
-      </button>
-    </div>
+<header class="topbar">
+  <h1>🛡️ Immune Shield</h1>
+  <p class="subtitle">Year 9 Science Fair | COVID-19</p>
+  <nav>
+    <a href="#overview">Overview</a>
+    <a href="#virus">Virus Science</a>
+    <a href="#immune">Immune System</a>
+    <a href="#prevention">Prevention</a>
+    <a href="#evidence">Evidence</a>
+    <a href="#realworld">Real-World</a>
+    <a href="#islam">Islamic Reflection</a>
+    <a href="#references">References</a>
   </nav>
-
-  <!-- Scroll progress bar -->
-  <div class="scroll-progress" id="scroll-progress"></div>
 </header>
 
-<!-- ============ SEARCH OVERLAY ============ -->
-<div class="overlay" id="search-overlay" aria-hidden="true">
-  <div class="overlay-panel glass">
-    <div class="overlay-head">
-      <input type="text" id="search-input" placeholder="Search topics — try 'antibody' or 'wudu'..." autocomplete="off">
-      <button class="icon-btn" id="search-close" aria-label="Close search">&times;</button>
-    </div>
-    <ul id="search-results" class="search-results"></ul>
+<main>
+<section id="overview" class="card">
+  <h2>Project Overview</h2>
+  <p><strong>COVID-19</strong> is caused by the virus <strong>SARS-CoV-2</strong>. This project explains how the virus spreads, how the immune system responds, and why prevention strategies like vaccination, ventilation, and hygiene protect individuals and communities.</p>
+  <p><strong>Key Question:</strong> How can scientific understanding of COVID-19 help us make responsible choices that protect ourselves and others?</p>
+</section>
+
+<section id="virus" class="card">
+  <h2>1) COVID-19 & Virus Science</h2>
+  <ul>
+    <li>COVID-19 is an infectious disease caused by SARS-CoV-2.</li>
+    <li>SARS-CoV-2 is an RNA virus with a lipid envelope and spike proteins.</li>
+    <li>It spreads mainly through respiratory particles, especially indoors.</li>
+    <li>Spike proteins bind to receptors on human cells, allowing infection.</li>
+  </ul>
+</section>
+
+<section id="immune" class="card">
+  <h2>2) Immune System Response</h2>
+  <h3>Innate immunity (fast)</h3>
+  <p>First-response defenses act quickly but non-specifically.</p>
+  <h3>Adaptive immunity (specific)</h3>
+  <p><strong>B cells</strong> produce antibodies. <strong>T cells</strong> help destroy infected cells and build long-term memory.</p>
+  <p>Vaccination trains this adaptive response without causing COVID-19 disease.</p>
+</section>
+
+<section id="prevention" class="card">
+  <h2>3) Prevention & Public Health</h2>
+  <div class="grid">
+    <div>✅ Vaccination and boosters</div>
+    <div>✅ Better indoor ventilation</div>
+    <div>✅ Handwashing and respiratory hygiene</div>
+    <div>✅ Staying home when unwell</div>
+    <div>✅ Masking in high-risk settings</div>
+    <div>✅ Protecting vulnerable people</div>
   </div>
-</div>
-
-<!-- ============ GLOSSARY OVERLAY ============ -->
-<div class="overlay" id="glossary-overlay" aria-hidden="true">
-  <div class="overlay-panel glass">
-    <div class="overlay-head">
-      <h2>Glossary</h2>
-      <button class="icon-btn" id="glossary-close" aria-label="Close glossary">&times;</button>
-    </div>
-    <div id="glossary-list" class="glossary-list"></div>
-  </div>
-</div>
-
-<!-- ============ MAIN CONTENT ============ -->
-<main id="main-content">
-
-<!-- ==================================================== HOME ==================================================== -->
-<section id="home" class="page active">
-
-  <section class="hero">
-    <div class="hero-text reveal">
-      <p class="eyebrow">Year 9 Science Fair &middot; Human Biology</p>
-      <h1>Your body wages a <span class="grad-text">silent war</span> every single second.</h1>
-      <p class="hero-sub">Right now, trillions of cells are patrolling your bloodstream, hunting invaders you'll never see, remembering enemies you've already beaten, and deciding whether you feel fine or fall sick. This is the immune system &mdash; explored, animated, and explained.</p>
-      <div class="hero-cta">
-        <a href="#immune" data-route="immune" class="btn btn-primary">Explore the Immune System</a>
-        <a href="#quiz" data-route="quiz" class="btn btn-ghost">Take the Quiz</a>
-      </div>
-      <div class="hero-stats">
-        <div><strong>3</strong><span>Lines of defence</span></div>
-        <div><strong>~10<sup>10</sup></strong><span>White blood cells in your body</span></div>
-        <div><strong>20</strong><span>Quiz questions</span></div>
-      </div>
-    </div>
-
-    <div class="hero-visual reveal">
-      <svg id="hero-cell-scene" viewBox="0 0 480 480" aria-label="Animated illustration of an antibody-tagged virus being approached by a phagocyte">
-        <defs>
-          <radialGradient id="glowGrad" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stop-color="var(--accent-cyan)" stop-opacity="0.35"/>
-            <stop offset="100%" stop-color="var(--accent-cyan)" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-        <circle cx="240" cy="240" r="220" fill="url(#glowGrad)"/>
-
-        <!-- lymph vessel path -->
-        <path id="cellPath" d="M40,340 C140,260 160,160 240,120 C320,80 380,140 440,110" fill="none" stroke="var(--line-soft)" stroke-width="2" stroke-dasharray="6 8"/>
-
-        <!-- Virus (target) -->
-        <g id="virusGroup" class="virus-target">
-          <circle cx="340" cy="150" r="26" class="virus-body"/>
-          <g class="virus-spikes">
-            <line x1="340" y1="124" x2="340" y2="108"/>
-            <line x1="340" y1="176" x2="340" y2="192"/>
-            <line x1="314" y1="150" x2="298" y2="150"/>
-            <line x1="366" y1="150" x2="382" y2="150"/>
-            <line x1="321" y1="131" x2="309" y2="119"/>
-            <line x1="359" y1="169" x2="371" y2="181"/>
-            <line x1="321" y1="169" x2="309" y2="181"/>
-            <line x1="359" y1="131" x2="371" y2="119"/>
-          </g>
-          <!-- antibodies latching on -->
-          <path class="antibody-y" d="M300,140 L312,150 L300,160 M312,150 L322,150" transform="rotate(20 312 150)"/>
-          <path class="antibody-y" d="M300,140 L312,150 L300,160 M312,150 L322,150" transform="translate(60,10) rotate(200 312 150)"/>
-        </g>
-
-        <!-- Phagocyte (macrophage) moving along path -->
-        <g id="phagocyteGroup">
-          <circle cx="0" cy="0" r="34" class="phagocyte-body"/>
-          <circle cx="-6" cy="-4" r="12" class="phagocyte-nucleus"/>
-          <circle cx="10" cy="8" r="5" class="phagocyte-granule"/>
-          <circle cx="-12" cy="10" r="4" class="phagocyte-granule"/>
-        </g>
-
-        <!-- floating background cells -->
-        <circle class="float-cell fc1" cx="70" cy="90" r="10"/>
-        <circle class="float-cell fc2" cx="420" cy="330" r="14"/>
-        <circle class="float-cell fc3" cx="90" cy="400" r="8"/>
-        <circle class="float-cell fc4" cx="410" cy="60" r="7"/>
-      </svg>
-    </div>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Why this matters</h2>
-    <p class="section-lead">Every cough covered, every vaccine taken, and every hand washed is a decision made possible by understanding biology. This site breaks down that biology into the parts that actually matter &mdash; for your science fair, and for your life.</p>
-
-    <div class="card-grid">
-      <div class="info-card glass">
-        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2 L21 6 V12 C21 17 17 21 12 22 C7 21 3 17 3 12 V6 Z"/></svg>
-        <h3>Defence in layers</h3>
-        <p>You're protected by three lines of defence &mdash; physical barriers, fast general responses, and a slow but precise specialist response.</p>
-      </div>
-      <div class="info-card glass">
-        <svg class="card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/></svg>
-        <h3>Memory that saves lives</h3>
-        <p>B cells and T cells can "remember" a pathogen for decades, which is the entire scientific basis for how vaccines work.</p>
-      </div>
-      <div class="info-card glass">
-        <svg class="card-icon" viewBox="0 0 24 24"><path d="M4 12h4l2-7 4 14 2-7h4"/></svg>
-        <h3>Prevention is powerful</h3>
-        <p>Simple, low-cost habits &mdash; hand hygiene, sleep, nutrition, vaccination &mdash; prevent far more disease than any cure treats.</p>
-      </div>
-      <div class="info-card glass">
-        <svg class="card-icon" viewBox="0 0 24 24"><path d="M12 21s-7-4.5-9.5-9A5.5 5.5 0 0 1 12 6a5.5 5.5 0 0 1 9.5 6C19 16.5 12 21 12 21Z"/></svg>
-        <h3>A shared value</h3>
-        <p>Protecting your health and protecting others isn't just biology &mdash; it's an ethic found across cultures, including in Islamic teaching.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Explore the site</h2>
-    <div class="nav-card-grid">
-      <a href="#immune" data-route="immune" class="nav-card glass"><span class="nav-card-num">01</span><h3>Immune System</h3><p>Lines of defence, white blood cells, B cells, T cells, phagocytes, antibodies.</p></a>
-      <a href="#diseases" data-route="diseases" class="nav-card glass"><span class="nav-card-num">02</span><h3>Diseases</h3><p>Viruses vs bacteria, antibiotic resistance, and COVID-19 as a case study.</p></a>
-      <a href="#vaccines" data-route="vaccines" class="nav-card glass"><span class="nav-card-num">03</span><h3>Vaccines</h3><p>Why vaccines work, herd immunity, and a history timeline.</p></a>
-      <a href="#prevention" data-route="prevention" class="nav-card glass"><span class="nav-card-num">04</span><h3>Prevention</h3><p>Hand hygiene, healthy lifestyle, and everyday disease prevention.</p></a>
-      <a href="#quiz" data-route="quiz" class="nav-card glass"><span class="nav-card-num">05</span><h3>Quiz</h3><p>20 questions, instant marking, and an achievement badge.</p></a>
-      <a href="#islam" data-route="islam" class="nav-card glass"><span class="nav-card-num">06</span><h3>Islam &amp; Health</h3><p>Cleanliness, wudu, and how science supports centuries-old teaching.</p></a>
-    </div>
-  </section>
-
 </section>
 
-<!-- ==================================================== IMMUNE SYSTEM ==================================================== -->
-<section id="immune" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Chapter 01</p>
-    <h1>The Immune System</h1>
-    <p class="page-hero-sub">A layered network of barriers, cells, and chemical signals that detects and destroys anything that shouldn't be inside you.</p>
-  </header>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">What is the immune system?</h2>
-    <p class="section-lead">The immune system is your body's defence network &mdash; a collection of organs, cells, and proteins that work together to identify and eliminate <strong>pathogens</strong> (disease-causing organisms such as bacteria, viruses, fungi, and parasites) before they cause serious harm. It also clears out damaged or abnormal cells, including some cancer cells.</p>
-    <p>Key organs include the <strong>bone marrow</strong> (where white blood cells are made), the <strong>thymus</strong> (where T cells mature), the <strong>spleen</strong> (which filters blood), and a network of <strong>lymph nodes</strong> connected by lymphatic vessels, which trap pathogens and are where B cells and T cells are activated.</p>
-  </section>
-
-  <!-- LYMPH NODE / SYSTEM DIAGRAM -->
-  <section class="section-block reveal">
-    <h2 class="section-title">The lymphatic network</h2>
-    <div class="diagram-row">
-      <svg viewBox="0 0 400 460" class="diagram lymph-diagram" aria-label="Diagram of the lymphatic system showing lymph nodes in the neck, armpits, and groin">
-        <path d="M200,20 C160,60 160,90 200,110 C240,90 240,60 200,20 Z" class="lymph-organ" title="Tonsils"/>
-        <circle cx="150" cy="150" r="12" class="lymph-node"/>
-        <circle cx="250" cy="150" r="12" class="lymph-node"/>
-        <path d="M180,170 L180,260 L220,260 L220,170 Z" class="lymph-organ" title="Thymus"/>
-        <circle cx="100" cy="230" r="16" class="lymph-node"/>
-        <circle cx="300" cy="230" r="16" class="lymph-node"/>
-        <path d="M240,270 C270,270 290,300 280,330 C270,360 230,350 230,320 Z" class="lymph-organ" title="Spleen"/>
-        <circle cx="140" cy="380" r="14" class="lymph-node"/>
-        <circle cx="260" cy="380" r="14" class="lymph-node"/>
-        <path class="lymph-vessel" d="M150,150 C130,190 110,210 100,230 C90,260 100,300 140,380"/>
-        <path class="lymph-vessel" d="M250,150 C270,190 290,210 300,230 C310,260 300,300 260,380"/>
-        <path class="lymph-vessel" d="M180,110 L150,150 M220,110 L250,150"/>
-        <text x="200" y="15" class="diagram-label" text-anchor="middle">Tonsils</text>
-        <text x="200" y="300" class="diagram-label" text-anchor="middle">Thymus</text>
-        <text x="345" y="315" class="diagram-label" text-anchor="middle">Spleen</text>
-        <text x="60" y="230" class="diagram-label" text-anchor="middle">Nodes</text>
-      </svg>
-      <div class="diagram-caption">
-        <h3>Why lymph nodes matter</h3>
-        <p>Lymph nodes are small filtering stations scattered through your body &mdash; concentrated in the neck, armpits, and groin. They trap pathogens carried in lymph fluid and are packed with B cells and T cells, which is why they swell when you're fighting an infection.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- THREE LINES OF DEFENCE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">The three lines of defence</h2>
-    <p class="section-lead">Immunologists describe the body's defences in three escalating layers. Each one buys time for the next.</p>
-
-    <div class="defence-timeline">
-      <div class="defence-step glass">
-        <span class="defence-num">1st</span>
-        <h3>Physical &amp; chemical barriers</h3>
-        <p><strong>Non-specific.</strong> Stops pathogens from entering at all: unbroken skin, mucus membranes lining the airways and gut, stomach acid, tears and saliva (which contain enzymes like lysozyme), and the natural bacteria that already live on your skin and outcompete invaders.</p>
-      </div>
-      <div class="defence-arrow" aria-hidden="true">&#8594;</div>
-      <div class="defence-step glass">
-        <span class="defence-num">2nd</span>
-        <h3>Innate immune response</h3>
-        <p><strong>Non-specific, fast (minutes-hours).</strong> If a pathogen breaches the first line, phagocytes engulf it, inflammation increases blood flow to the area, and fever raises body temperature to slow pathogen reproduction. This response is identical no matter what the invader is.</p>
-      </div>
-      <div class="defence-arrow" aria-hidden="true">&#8594;</div>
-      <div class="defence-step glass">
-        <span class="defence-num">3rd</span>
-        <h3>Adaptive (specific) response</h3>
-        <p><strong>Specific, slower to start (days), but precise and long-lasting.</strong> B cells produce antibodies tailor-made for the exact pathogen; T cells destroy infected cells directly. This is the only line of defence that creates <em>immunological memory</em>.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHITE BLOOD CELLS -->
-  <section class="section-block reveal">
-    <h2 class="section-title">White blood cells (Leukocytes)</h2>
-    <p class="section-lead">White blood cells are the immune system's soldiers. They're made in bone marrow and travel through blood and lymph, and different types have very different jobs.</p>
-
-    <div class="tab-group" data-tabgroup="wbc">
-      <div class="tab-buttons">
-        <button class="tab-btn active" data-tab="phagocyte">Phagocytes</button>
-        <button class="tab-btn" data-tab="bcell">B Cells</button>
-        <button class="tab-btn" data-tab="tcell">T Cells</button>
-        <button class="tab-btn" data-tab="antibody">Antibodies</button>
-      </div>
-
-      <div class="tab-panel active" data-panel="phagocyte">
-        <div class="panel-grid">
-          <svg viewBox="0 0 200 200" class="diagram cell-diagram" aria-label="Diagram of a phagocyte engulfing a bacterium">
-            <circle cx="100" cy="100" r="70" class="phago-outline"/>
-            <circle cx="85" cy="90" r="24" class="phago-nucleus"/>
-            <circle cx="140" cy="120" r="14" class="engulfed-bacterium"/>
-            <path d="M120,100 C140,90 160,100 155,120" class="phago-arm"/>
-            <path d="M130,140 C145,150 155,140 150,125" class="phago-arm"/>
-          </svg>
-          <div>
-            <h3>Phagocytes: the first responders</h3>
-            <p>Phagocytes (including <strong>neutrophils</strong> and <strong>macrophages</strong>) are white blood cells that engulf and digest pathogens whole in a process called <strong>phagocytosis</strong>. They are part of the innate (non-specific) response, meaning they attack any pathogen the same way, without needing to "recognise" it first.</p>
-            <p>Neutrophils are the most numerous and arrive first, while macrophages live longer in tissues and also present fragments of the pathogen to activate the adaptive immune system &mdash; linking the innate and adaptive responses together.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" data-panel="bcell">
-        <div class="panel-grid">
-          <svg viewBox="0 0 200 200" class="diagram cell-diagram" aria-label="Diagram of a B cell releasing Y-shaped antibodies">
-            <circle cx="100" cy="100" r="60" class="bcell-outline"/>
-            <circle cx="100" cy="100" r="26" class="bcell-nucleus"/>
-            <g class="released-antibody"><path d="M0,-14 L0,0 M0,0 L-9,9 M0,0 L9,9" transform="translate(150,60)"/></g>
-            <g class="released-antibody"><path d="M0,-14 L0,0 M0,0 L-9,9 M0,0 L9,9" transform="translate(160,110)"/></g>
-            <g class="released-antibody"><path d="M0,-14 L0,0 M0,0 L-9,9 M0,0 L9,9" transform="translate(140,150)"/></g>
-          </svg>
-          <div>
-            <h3>B cells: the antibody factories</h3>
-            <p>B cells are part of the <strong>adaptive</strong> immune system. Each B cell recognises one specific pathogen shape (antigen). When it finds a matching pathogen, it multiplies rapidly and turns into <strong>plasma cells</strong>, which mass-produce antibodies specific to that invader.</p>
-            <p>Some become long-lived <strong>memory B cells</strong>, which stay in the body for years, ready to trigger a much faster antibody response if the same pathogen returns &mdash; the basis of long-term immunity.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" data-panel="tcell">
-        <div class="panel-grid">
-          <svg viewBox="0 0 200 200" class="diagram cell-diagram" aria-label="Diagram of a killer T cell destroying an infected cell">
-            <circle cx="70" cy="100" r="40" class="tcell-outline"/>
-            <circle cx="70" cy="100" r="16" class="tcell-nucleus"/>
-            <circle cx="150" cy="100" r="34" class="infected-cell"/>
-            <path d="M150,80 L165,95 M150,120 L165,105 M130,80 L145,95 M130,120 L145,105" class="cell-crack"/>
-            <line x1="110" y1="100" x2="130" y2="100" class="attack-line"/>
-          </svg>
-          <div>
-            <h3>T cells: search and destroy</h3>
-            <p>T cells mature in the <strong>thymus</strong> and come in two main types. <strong>Cytotoxic (killer) T cells</strong> identify body cells that are infected by a virus (or are cancerous) and destroy them directly, stopping the pathogen from replicating further.</p>
-            <p><strong>Helper T cells</strong> don't kill directly &mdash; instead they release chemical signals (cytokines) that activate B cells and killer T cells, effectively acting as the immune system's coordinators. This is the cell type targeted by HIV, which is why HIV weakens the entire immune response.</p>
-          </div>
-        </div>
-      </div>
-
-      <div class="tab-panel" data-panel="antibody">
-        <div class="panel-grid">
-          <svg viewBox="0 0 200 200" class="diagram cell-diagram" aria-label="Diagram of an antibody binding to an antigen on a virus, like a key fitting a lock">
-            <path d="M100,40 L100,100 M100,100 L60,150 M100,100 L140,150" class="antibody-shape" stroke-width="8" fill="none" stroke-linecap="round"/>
-            <path d="M55,145 L65,155 M65,145 L55,155" class="antibody-tip"/>
-            <path d="M135,145 L145,155 M145,145 L135,155" class="antibody-tip"/>
-            <circle cx="100" cy="20" r="14" class="antigen-target"/>
-          </svg>
-          <div>
-            <h3>Antibodies: precision weapons</h3>
-            <p>An antibody (or <strong>immunoglobulin</strong>) is a Y-shaped protein produced by plasma cells. The tips of the "Y" are shaped to match one specific <strong>antigen</strong> &mdash; a marker molecule on a pathogen's surface &mdash; like a key fitting a single lock.</p>
-            <p>Antibodies work by: <strong>neutralising</strong> pathogens (blocking them from entering cells), <strong>agglutinating</strong> them (clumping pathogens together), and <strong>tagging</strong> them so phagocytes can find and engulf them more easily.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- INNATE VS ADAPTIVE COMPARISON -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Innate vs. adaptive immunity</h2>
-    <div class="compare-table-wrap glass">
-      <table class="compare-table">
-        <thead><tr><th></th><th>Innate (Lines 1 &amp; 2)</th><th>Adaptive (Line 3)</th></tr></thead>
-        <tbody>
-          <tr><td>Speed</td><td>Immediate to a few hours</td><td>Several days to build up</td></tr>
-          <tr><td>Specificity</td><td>Same response to any pathogen</td><td>Tailored to one exact pathogen</td></tr>
-          <tr><td>Memory</td><td>None</td><td>Yes &mdash; can last decades</td></tr>
-          <tr><td>Key cells</td><td>Phagocytes, skin, mucus</td><td>B cells, T cells, antibodies</td></tr>
-          <tr><td>Improves with exposure?</td><td>No</td><td>Yes &mdash; faster &amp; stronger each time</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section class="section-block reveal fun-fact-block">
-    <div class="fun-fact glass">
-      <span class="fun-fact-tag">Did you know?</span>
-      <p>An adult body contains roughly <strong>25–35 billion white blood cells</strong> at any moment, and the bone marrow produces about <strong>100 billion new ones every single day</strong> to replace cells lost in the fight against infection.</p>
-    </div>
-  </section>
+<section id="evidence" class="card">
+  <h2>4) Evidence, Research & Reasoning</h2>
+  <p>This project uses trusted scientific/public-health organizations and peer-reviewed evidence to support claims.</p>
+  <ul>
+    <li>COVID-19 spread and prevention patterns</li>
+    <li>Immune response mechanisms</li>
+    <li>Vaccine effectiveness against severe illness</li>
+    <li>Public health outcomes for communities</li>
+  </ul>
 </section>
 
-<!-- ==================================================== DISEASES ==================================================== -->
-<section id="diseases" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Chapter 02</p>
-    <h1>Diseases &amp; Pathogens</h1>
-    <p class="page-hero-sub">Not all infections are the same. Knowing the difference between a virus and a bacterium is the difference between using medicine correctly &mdash; and fuelling a global health crisis.</p>
-  </header>
-
-  <!-- VIRUS VS BACTERIA INTERACTIVE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Virus vs. Bacteria</h2>
-    <p class="section-lead">Click each card to flip it and compare.</p>
-    <div class="flip-grid">
-      <div class="flip-card" tabindex="0" role="button" aria-label="Flip to see bacteria facts">
-        <div class="flip-inner">
-          <div class="flip-front glass">
-            <svg viewBox="0 0 100 100" class="flip-icon"><ellipse cx="50" cy="50" rx="34" ry="18" class="bacteria-body"/><path d="M20,50 C10,40 10,60 20,50" class="bacteria-flagella"/></svg>
-            <h3>Bacteria</h3>
-            <p class="flip-hint">Tap to reveal</p>
-          </div>
-          <div class="flip-back glass">
-            <ul>
-              <li><strong>Living</strong> single-celled organisms</li>
-              <li>Can reproduce <strong>independently</strong></li>
-              <li>Some are helpful (gut bacteria); some cause disease (e.g. strep throat, tuberculosis)</li>
-              <li>Treated with <strong>antibiotics</strong>, which target bacterial cell structures</li>
-              <li>Example: <em>Streptococcus</em>, <em>E. coli</em></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="flip-card" tabindex="0" role="button" aria-label="Flip to see virus facts">
-        <div class="flip-inner">
-          <div class="flip-front glass">
-            <svg viewBox="0 0 100 100" class="flip-icon"><circle cx="50" cy="50" r="22" class="virus-body-small"/><g class="virus-spikes-small"><line x1="50" y1="28" x2="50" y2="16"/><line x1="50" y1="72" x2="50" y2="84"/><line x1="28" y1="50" x2="16" y2="50"/><line x1="72" y1="50" x2="84" y2="50"/></g></svg>
-            <h3>Viruses</h3>
-            <p class="flip-hint">Tap to reveal</p>
-          </div>
-          <div class="flip-back glass">
-            <ul>
-              <li>Not fully "alive" &mdash; cannot reproduce alone</li>
-              <li>Must <strong>hijack a host cell's</strong> machinery to copy themselves</li>
-              <li>Much smaller than bacteria</li>
-              <li><strong>Antibiotics don't work</strong> on viruses; antivirals or vaccines are used instead</li>
-              <li>Example: influenza, SARS-CoV-2 (COVID-19), chickenpox</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ANTIBIOTIC RESISTANCE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Antibiotic resistance</h2>
-    <div class="diagram-row reverse">
-      <div>
-        <p class="section-lead">Antibiotic resistance happens when bacteria evolve so that antibiotics no longer kill them. It is one of the biggest threats to modern medicine, according to the World Health Organization.</p>
-        <ol class="process-list">
-          <li>A population of bacteria is exposed to an antibiotic.</li>
-          <li>Most bacteria die, but a few have a random mutation that helps them survive.</li>
-          <li>Those resistant bacteria reproduce, passing on the resistance gene.</li>
-          <li>Over time (especially with overuse or incomplete courses of antibiotics), resistant strains dominate.</li>
-          <li>The antibiotic no longer works &mdash; a "superbug" has emerged.</li>
-        </ol>
-        <p><strong>Why it matters:</strong> Taking antibiotics only when prescribed, and always finishing the full course, slows this process and protects antibiotics for everyone.</p>
-      </div>
-      <svg viewBox="0 0 300 260" class="diagram" aria-label="Diagram showing bacteria evolving antibiotic resistance over three generations">
-        <text x="20" y="20" class="diagram-label">Generation 1</text>
-        <g class="bact-gen">
-          <ellipse cx="40" cy="50" rx="16" ry="9" class="bacteria-body"/>
-          <ellipse cx="90" cy="55" rx="16" ry="9" class="bacteria-body"/>
-          <ellipse cx="140" cy="48" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="190" cy="55" rx="16" ry="9" class="bacteria-body"/>
-          <ellipse cx="240" cy="50" rx="16" ry="9" class="bacteria-body"/>
-        </g>
-        <text x="20" y="110" class="diagram-label">Generation 2 (after antibiotic)</text>
-        <g class="bact-gen">
-          <ellipse cx="140" cy="140" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="180" cy="145" rx="16" ry="9" class="bacteria-body resistant"/>
-        </g>
-        <text x="20" y="200" class="diagram-label">Generation 3 (resistant strain dominates)</text>
-        <g class="bact-gen">
-          <ellipse cx="60" cy="230" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="110" cy="235" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="160" cy="228" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="210" cy="235" rx="16" ry="9" class="bacteria-body resistant"/>
-          <ellipse cx="255" cy="230" rx="16" ry="9" class="bacteria-body resistant"/>
-        </g>
-      </svg>
-    </div>
-  </section>
-
-  <!-- COVID-19 CASE STUDY -->
-  <section class="section-block reveal">
-    <h2 class="section-title">COVID-19: a modern case study</h2>
-    <p class="section-lead">SARS-CoV-2, the virus that causes COVID-19, is one of the clearest modern examples of immunology, vaccination, and public health working together in real time.</p>
-    <div class="card-grid">
-      <div class="info-card glass">
-        <h3>The pathogen</h3>
-        <p>A virus with spike proteins on its surface that bind to receptors in the human respiratory tract, allowing it to enter and hijack cells.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>The immune response</h3>
-        <p>Phagocytes and innate defences respond first; B cells then produce antibodies against the spike protein, while T cells clear infected cells.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>The vaccine breakthrough</h3>
-        <p>mRNA vaccines taught cells to briefly produce a harmless spike protein, training the immune system to recognise the real virus without ever causing infection.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>Public health measures</h3>
-        <p>Hand hygiene, masks, ventilation, and physical distancing reduced transmission while vaccines were developed and rolled out at record speed.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block reveal fun-fact-block">
-    <div class="fun-fact glass">
-      <span class="fun-fact-tag">Did you know?</span>
-      <p>The first COVID-19 vaccines were developed and authorised in <strong>under one year</strong> &mdash; a process that traditionally takes 10–15 years &mdash; thanks to decades of prior mRNA research and unprecedented global collaboration.</p>
-    </div>
-  </section>
+<section id="realworld" class="card">
+  <h2>5) Real-World Connection</h2>
+  <p><strong>Families:</strong> Prevention protects high-risk loved ones.</p>
+  <p><strong>Schools:</strong> Reduces absences and disruption.</p>
+  <p><strong>Hospitals:</strong> Fewer severe cases reduce system pressure.</p>
+  <p><strong>Communities:</strong> Responsible actions reduce spread and harm.</p>
 </section>
 
-<!-- ==================================================== VACCINES ==================================================== -->
-<section id="vaccines" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Chapter 03</p>
-    <h1>Vaccines</h1>
-    <p class="page-hero-sub">Vaccines don't cure disease &mdash; they prevent it, by teaching your immune system to recognise a threat before you ever meet it for real.</p>
-  </header>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Why vaccines work</h2>
-    <p class="section-lead">A vaccine contains a harmless piece of a pathogen, a weakened/inactivated version of it, or genetic instructions for one small piece of it (like mRNA vaccines). It cannot cause the disease, but it looks enough like the real pathogen for your immune system to react.</p>
-    <div class="process-flow">
-      <div class="flow-step glass"><span>1</span><p>Vaccine introduces a harmless antigen into the body.</p></div>
-      <div class="flow-arrow">&#8594;</div>
-      <div class="flow-step glass"><span>2</span><p>B cells produce antibodies against that antigen; T cells learn to recognise it.</p></div>
-      <div class="flow-arrow">&#8594;</div>
-      <div class="flow-step glass"><span>3</span><p>Memory B cells and T cells remain in the body long-term.</p></div>
-      <div class="flow-arrow">&#8594;</div>
-      <div class="flow-step glass"><span>4</span><p>If the real pathogen appears, the immune system responds fast &mdash; often before symptoms start.</p></div>
-    </div>
-  </section>
-
-  <!-- BEFORE/AFTER SLIDER -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Before vs. after vaccination</h2>
-    <p class="section-lead">Drag the slider to compare an unvaccinated immune response with a vaccinated one, for the same pathogen exposure.</p>
-    <div class="compare-slider-wrap">
-      <div class="compare-slider" id="vaccine-slider">
-        <div class="compare-side compare-before glass">
-          <h3>Without vaccination</h3>
-          <ul>
-            <li>Body has never seen this antigen</li>
-            <li>Immune response starts slow (days)</li>
-            <li>Pathogen has time to multiply and cause symptoms</li>
-            <li>Illness can be severe; higher risk of complications</li>
-          </ul>
-        </div>
-        <div class="compare-side compare-after glass">
-          <h3>With vaccination</h3>
-          <ul>
-            <li>Memory cells already recognise the antigen</li>
-            <li>Antibody production ramps up within hours</li>
-            <li>Pathogen is cleared before it can spread far</li>
-            <li>Mild or no symptoms; complications far less likely</li>
-          </ul>
-        </div>
-        <input type="range" min="0" max="100" value="50" id="slider-range" aria-label="Drag to compare before and after vaccination">
-        <div class="slider-handle" id="slider-handle">
-          <svg viewBox="0 0 24 24"><path d="M8 5 L3 12 L8 19 M16 5 L21 12 L16 19"/></svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- HERD IMMUNITY CHART -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Herd immunity</h2>
-    <div class="diagram-row">
-      <div>
-        <p class="section-lead">When enough of a population is immune (through vaccination or prior infection), a pathogen struggles to find new hosts &mdash; protecting even people who can't be vaccinated, such as newborns or the immunocompromised.</p>
-        <div class="bar-chart" role="img" aria-label="Bar chart comparing outbreak size at low and high vaccination rates">
-          <div class="bar-row"><span class="bar-label">20% vaccinated</span><div class="bar-track"><div class="bar-fill" style="--w:88%"></div></div><span class="bar-value">Large outbreak</span></div>
-          <div class="bar-row"><span class="bar-label">50% vaccinated</span><div class="bar-track"><div class="bar-fill" style="--w:55%"></div></div><span class="bar-value">Moderate outbreak</span></div>
-          <div class="bar-row"><span class="bar-label">75% vaccinated</span><div class="bar-track"><div class="bar-fill" style="--w:28%"></div></div><span class="bar-value">Small clusters</span></div>
-          <div class="bar-row"><span class="bar-label">95% vaccinated</span><div class="bar-track"><div class="bar-fill" style="--w:6%"></div></div><span class="bar-value">Outbreak contained</span></div>
-        </div>
-      </div>
-      <svg viewBox="0 0 300 300" class="diagram" aria-label="Diagram of herd immunity showing an infected person surrounded by mostly immune individuals">
-        <circle cx="150" cy="150" r="14" class="herd-infected"/>
-        <g class="herd-people"></g>
-      </svg>
-    </div>
-  </section>
-
-  <!-- VACCINATION TIMELINE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">A history of vaccination</h2>
-    <div class="timeline">
-      <div class="timeline-item glass">
-        <span class="timeline-year">1796</span>
-        <p>Edward Jenner uses cowpox material to protect against smallpox &mdash; the world's first vaccine.</p>
-      </div>
-      <div class="timeline-item glass">
-        <span class="timeline-year">1885</span>
-        <p>Louis Pasteur develops a rabies vaccine, pioneering the concept of lab-attenuated (weakened) vaccines.</p>
-      </div>
-      <div class="timeline-item glass">
-        <span class="timeline-year">1955</span>
-        <p>Jonas Salk's inactivated polio vaccine begins mass rollout, dramatically cutting global polio cases.</p>
-      </div>
-      <div class="timeline-item glass">
-        <span class="timeline-year">1980</span>
-        <p>The World Health Organization declares smallpox <strong>eradicated</strong> &mdash; the only human disease eliminated through vaccination.</p>
-      </div>
-      <div class="timeline-item glass">
-        <span class="timeline-year">2020</span>
-        <p>mRNA COVID-19 vaccines become the first of their kind authorised for widespread human use.</p>
-      </div>
-      <div class="timeline-item glass">
-        <span class="timeline-year">Today</span>
-        <p>Routine childhood immunisation schedules protect against measles, tetanus, whooping cough, and more, worldwide.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ ACCORDION -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Common questions</h2>
-    <div class="accordion" id="vaccine-faq">
-      <div class="accordion-item glass">
-        <button class="accordion-head">Can a vaccine give you the disease it protects against? <span class="accordion-icon">+</span></button>
-        <div class="accordion-body"><p>No. Vaccines use a harmless antigen, a weakened/inactivated pathogen, or genetic instructions for one protein &mdash; none of which can cause the actual disease in a healthy person. Mild, short-lived side effects (like a sore arm or low fever) are signs the immune system is responding, not signs of infection.</p></div>
-      </div>
-      <div class="accordion-item glass">
-        <button class="accordion-head">Why do some vaccines need multiple doses? <span class="accordion-icon">+</span></button>
-        <div class="accordion-body"><p>The first dose primes the immune system; booster doses strengthen and prolong the antibody and memory cell response, since immunity can fade over time for some pathogens.</p></div>
-      </div>
-      <div class="accordion-item glass">
-        <button class="accordion-head">Are vaccines tested for safety? <span class="accordion-icon">+</span></button>
-        <div class="accordion-body"><p>Yes. Vaccines go through multiple phases of clinical trials on increasingly large groups of people, followed by ongoing safety monitoring once approved, overseen by health authorities such as the WHO, CDC, and Australia's TGA.</p></div>
-      </div>
-      <div class="accordion-item glass">
-        <button class="accordion-head">What is herd immunity? <span class="accordion-icon">+</span></button>
-        <div class="accordion-body"><p>When a high enough proportion of a population is immune, a pathogen has too few new hosts to spread easily, indirectly protecting people who cannot be vaccinated for medical reasons.</p></div>
-      </div>
-    </div>
-  </section>
+<section id="islam" class="card">
+  <h2>6) Islamic Reflection</h2>
+  <p>Islamic teachings emphasize cleanliness, protecting health, preventing harm, and caring for others—principles strongly aligned with COVID-19 prevention.</p>
+  <blockquote>“And do not throw yourselves with your own hands into destruction.” — Qur’an 2:195</blockquote>
+  <blockquote>“Whoever saves one life, it is as if he has saved all mankind.” — Qur’an 5:32</blockquote>
+  <blockquote>“There should be neither harming nor reciprocating harm.” — Hadith principle</blockquote>
 </section>
 
-<!-- ==================================================== PREVENTION ==================================================== -->
-<section id="prevention" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Chapter 04</p>
-    <h1>Disease Prevention</h1>
-    <p class="page-hero-sub">The immune system does most of its best work when it's supported &mdash; by hygiene, sleep, nutrition, and simple everyday habits.</p>
-  </header>
-
-  <!-- INTERACTIVE BODY DIAGRAM -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Your body's built-in defences</h2>
-    <p class="section-lead">Click a hotspot to learn how each body part helps prevent disease.</p>
-    <div class="body-diagram-wrap">
-      <svg viewBox="0 0 220 420" class="diagram body-diagram" aria-label="Interactive diagram of the human body with clickable defence hotspots">
-        <ellipse cx="110" cy="45" rx="34" ry="38" class="body-part"/>
-        <rect x="85" y="80" width="50" height="30" rx="10" class="body-part"/>
-        <rect x="55" y="110" width="110" height="130" rx="24" class="body-part"/>
-        <rect x="30" y="120" width="24" height="110" rx="12" class="body-part"/>
-        <rect x="166" y="120" width="24" height="110" rx="12" class="body-part"/>
-        <rect x="75" y="240" width="28" height="140" rx="14" class="body-part"/>
-        <rect x="117" y="240" width="28" height="140" rx="14" class="body-part"/>
-
-        <circle class="hotspot" data-part="skin" cx="150" cy="150" r="9"/>
-        <circle class="hotspot" data-part="nose" cx="110" cy="50" r="9"/>
-        <circle class="hotspot" data-part="hands" cx="34" cy="225" r="9"/>
-        <circle class="hotspot" data-part="gut" cx="105" cy="195" r="9"/>
-        <circle class="hotspot" data-part="lungs" cx="90" cy="150" r="9"/>
-      </svg>
-      <div class="body-info glass" id="body-info">
-        <h3 id="body-info-title">Select a hotspot</h3>
-        <p id="body-info-text">Click any glowing point on the diagram to reveal how that part of the body helps stop pathogens.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- HAND HYGIENE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Hand hygiene</h2>
-    <p class="section-lead">Hands are one of the most common ways pathogens travel from surfaces and people into your body &mdash; via your eyes, nose, and mouth. Health authorities including the WHO and CDC recommend washing hands for at least 20 seconds with soap.</p>
-    <div class="step-cards">
-      <div class="step-card glass"><span class="step-num">1</span><p>Wet hands with clean, running water</p></div>
-      <div class="step-card glass"><span class="step-num">2</span><p>Apply soap and lather, covering all surfaces</p></div>
-      <div class="step-card glass"><span class="step-num">3</span><p>Scrub for at least 20 seconds, including between fingers &amp; under nails</p></div>
-      <div class="step-card glass"><span class="step-num">4</span><p>Rinse thoroughly under running water</p></div>
-      <div class="step-card glass"><span class="step-num">5</span><p>Dry with a clean towel or air dry</p></div>
-    </div>
-  </section>
-
-  <!-- HEALTHY LIFESTYLE -->
-  <section class="section-block reveal">
-    <h2 class="section-title">Healthy lifestyle &amp; immune function</h2>
-    <div class="card-grid">
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/></svg><h3>Sleep</h3><p>During deep sleep, the body produces cytokines needed to fight infection and inflammation. Chronic poor sleep is linked to weaker immune responses.</p></div>
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/></svg><h3>Nutrition</h3><p>Vitamins A, C, D, and zinc support immune cell production and function. A varied diet with fruit, vegetables, and protein gives the immune system its raw materials.</p></div>
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 16 0 8 8 0 0 0-16 0Z"/></svg><h3>Exercise</h3><p>Moderate regular activity improves circulation, helping immune cells travel through the body more efficiently, and reduces chronic inflammation.</p></div>
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2C8 6 5 10 5 14a7 7 0 0 0 14 0c0-4-3-8-7-12Z"/></svg><h3>Hydration</h3><p>Water helps produce lymph, which circulates white blood cells throughout the body, and keeps mucus membranes an effective barrier.</p></div>
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg><h3>Stress management</h3><p>Chronic stress raises cortisol, which can suppress immune activity over time. Managing stress supports steadier immune function.</p></div>
-      <div class="info-card glass"><svg class="card-icon" viewBox="0 0 24 24"><path d="M12 2L2 7v6c0 5 4 9 10 9s10-4 10-9V7l-10-5Z"/></svg><h3>Vaccination</h3><p>Staying up to date with recommended vaccines is one of the most effective preventative actions available, individually and for the community.</p></div>
-    </div>
-  </section>
-
-  <section class="section-block reveal fun-fact-block">
-    <div class="fun-fact glass">
-      <span class="fun-fact-tag">Did you know?</span>
-      <p>Washing your hands properly can reduce respiratory illness in the community by roughly <strong>16–21%</strong>, according to public health research reviewed by the CDC.</p>
-    </div>
-  </section>
+<section id="references" class="card">
+  <h2>References</h2>
+  <ul>
+    <li>World Health Organization (WHO)</li>
+    <li>Centers for Disease Control and Prevention (CDC)</li>
+    <li>NIH / MedlinePlus</li>
+    <li>Peer-reviewed journals (e.g., Nature, The Lancet, BMJ)</li>
+  </ul>
 </section>
-
-<!-- ==================================================== QUIZ ==================================================== -->
-<section id="quiz" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Test yourself</p>
-    <h1>Interactive Quiz</h1>
-    <p class="page-hero-sub">20 questions covering everything on this site. Questions are shuffled every attempt.</p>
-  </header>
-
-  <section class="section-block reveal">
-    <div id="quiz-start-screen" class="quiz-start glass">
-      <svg viewBox="0 0 100 100" class="quiz-shield"><path d="M50 5 L90 20 V48 C90 72 72 88 50 95 C28 88 10 72 10 48 V20 Z"/><path d="M32 50 L45 63 L70 35"/></svg>
-      <h2>Ready to test your immune knowledge?</h2>
-      <p>20 multiple-choice questions &middot; instant feedback &middot; a badge if you score 80% or higher.</p>
-      <button class="btn btn-primary" id="quiz-start-btn">Start Quiz</button>
-    </div>
-
-    <div id="quiz-active-screen" class="quiz-active hidden">
-      <div class="quiz-progress-wrap">
-        <div class="quiz-progress-track"><div class="quiz-progress-fill" id="quiz-progress-fill"></div></div>
-        <span id="quiz-progress-label">Question 1 of 20</span>
-      </div>
-      <div class="quiz-card glass">
-        <h3 id="quiz-question">Question text</h3>
-        <div class="quiz-options" id="quiz-options"></div>
-        <div class="quiz-explain" id="quiz-explain" hidden></div>
-        <button class="btn btn-primary" id="quiz-next-btn" hidden>Next Question</button>
-      </div>
-    </div>
-
-    <div id="quiz-result-screen" class="quiz-result hidden glass">
-      <div id="quiz-badge" class="quiz-badge hidden">
-        <svg viewBox="0 0 100 100"><path d="M50 5 L90 20 V48 C90 72 72 88 50 95 C28 88 10 72 10 48 V20 Z"/><path d="M32 50 L45 63 L70 35"/></svg>
-        <p>Immunity Expert Badge</p>
-      </div>
-      <h2 id="quiz-score-heading">You scored X / 20</h2>
-      <p id="quiz-score-message"></p>
-      <button class="btn btn-primary" id="quiz-restart-btn">Restart Quiz</button>
-    </div>
-  </section>
-</section>
-
-<!-- ==================================================== ISLAM & HEALTH ==================================================== -->
-<section id="islam" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Faith &amp; Science</p>
-    <h1>Islam &amp; Health</h1>
-    <p class="page-hero-sub">Long before germ theory existed, Islamic teaching placed deep emphasis on cleanliness and protecting others from illness &mdash; principles modern medicine now confirms in detail.</p>
-  </header>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Cleanliness in Islamic teaching</h2>
-    <p class="section-lead">Cleanliness (<em>taharah</em>) holds a central place in Islam, treated not just as good manners but as part of faith itself. This connects directly to disease prevention: many of the practices described below reduce the spread of the exact pathogens covered elsewhere on this site.</p>
-
-    <div class="card-grid">
-      <div class="info-card glass">
-        <h3>Cleanliness as part of faith</h3>
-        <p>A well-known hadith records the Prophet Muhammad (peace be upon him) teaching that <strong>"cleanliness is half of faith"</strong> (Sahih Muslim), placing physical purity alongside spiritual practice rather than separate from it.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>The Qur'an on purification</h3>
-        <p>The Qur'an states that God <strong>"loves those who purify themselves"</strong> (Surah Al-Baqarah, 2:222), linking physical purification with being loved and favoured by God.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Wudu: ritual washing before prayer</h2>
-    <div class="diagram-row">
-      <svg viewBox="0 0 300 220" class="diagram" aria-label="Diagram illustrating the steps of wudu, washing hands, mouth, nose, face, arms, head and feet">
-        <circle cx="50" cy="50" r="26" class="wudu-part"/><text x="50" y="90" class="diagram-label" text-anchor="middle">Hands</text>
-        <circle cx="130" cy="50" r="26" class="wudu-part"/><text x="130" y="90" class="diagram-label" text-anchor="middle">Mouth &amp; nose</text>
-        <circle cx="210" cy="50" r="26" class="wudu-part"/><text x="210" y="90" class="diagram-label" text-anchor="middle">Face</text>
-        <circle cx="50" cy="150" r="26" class="wudu-part"/><text x="50" y="190" class="diagram-label" text-anchor="middle">Arms</text>
-        <circle cx="130" cy="150" r="26" class="wudu-part"/><text x="130" y="190" class="diagram-label" text-anchor="middle">Head</text>
-        <circle cx="210" cy="150" r="26" class="wudu-part"/><text x="210" y="190" class="diagram-label" text-anchor="middle">Feet</text>
-      </svg>
-      <div class="diagram-caption">
-        <h3>Washed at least five times a day</h3>
-        <p>Muslims perform wudu before each of the five daily prayers, washing the hands, mouth, nose, face, arms, and feet &mdash; the exact body parts most involved in picking up and transmitting pathogens through touch, breathing, and eating.</p>
-        <p>This means observant Muslims wash key transmission points on the body multiple times daily, independent of any modern hygiene campaign, simply as a routine act of worship.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Protecting others from disease</h2>
-    <div class="card-grid">
-      <div class="info-card glass">
-        <h3>An early instruction resembling quarantine</h3>
-        <p>The Prophet Muhammad (peace be upon him) is reported to have said: <strong>"If you hear of an outbreak of plague in a land, do not enter it; and if it breaks out in a land while you are in it, do not leave it"</strong> (Sahih al-Bukhari). This instruction, given over 1,400 years ago, mirrors modern quarantine and lockdown principles used to contain outbreaks like COVID-19.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>Covering coughs and sneezes</h3>
-        <p>Islamic tradition encourages covering the mouth when sneezing and lowering the voice, reflecting a broader teaching to avoid causing harm to others (<em>"la darar wa la dirar"</em> &mdash; there should be no harm nor reciprocating harm), a principle scholars connect directly to preventing disease transmission.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>Caring for the body</h3>
-        <p>The Prophet Muhammad (peace be upon him) is reported to have said: <strong>"Your body has a right over you"</strong> (Sahih al-Bukhari), used by scholars to support maintaining good health, adequate rest, and avoiding harm to oneself &mdash; consistent with the healthy-lifestyle habits described in the Prevention chapter.</p>
-      </div>
-      <div class="info-card glass">
-        <h3>Encouraging seeking treatment</h3>
-        <p>The Prophet Muhammad (peace be upon him) is reported to have said: <strong>"There is no disease that Allah has created, except that He also has created its treatment"</strong> (Sahih al-Bukhari), which scholars cite as encouragement to seek medical treatment, including vaccination, rather than avoid it.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Where faith and science agree</h2>
-    <div class="compare-table-wrap glass">
-      <table class="compare-table">
-        <thead><tr><th>Islamic teaching</th><th>Modern scientific basis</th></tr></thead>
-        <tbody>
-          <tr><td>Wudu before every prayer</td><td>Regular handwashing removes pathogens before they reach eyes, nose, or mouth</td></tr>
-          <tr><td>Avoiding entering or leaving a plague-affected area</td><td>Quarantine reduces the spread of infectious disease by limiting contact between infected and unaffected populations</td></tr>
-          <tr><td>Covering the mouth when sneezing</td><td>Reduces the spread of airborne droplets that carry pathogens</td></tr>
-          <tr><td>"Your body has a right over you"</td><td>Adequate sleep, nutrition, and rest support immune cell production and function</td></tr>
-          <tr><td>Seeking treatment when unwell</td><td>Public health interventions like vaccines and medicine directly reduce disease severity and spread</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="note-text">These teachings are presented here as historical and cultural context relevant to health practices; interpretation of religious texts should be discussed with qualified religious scholars.</p>
-  </section>
-
-  <section class="section-block reveal">
-    <h2 class="section-title">Reflection</h2>
-    <div class="reflection-box glass">
-      <p>Researching this topic showed that Islamic teaching and immunology arrive at the same conclusions from very different directions. Long before phagocytes, antibodies, or germ theory were discovered, practices like wudu and the guidance to isolate during an outbreak were already reducing the spread of disease. It reframes cleanliness and health not just as personal habits, but as an act of care and responsibility toward the whole community &mdash; which is exactly what hand hygiene, vaccination, and disease prevention are today.</p>
-    </div>
-  </section>
-</section>
-
-<!-- ==================================================== SOURCES ==================================================== -->
-<section id="sources" class="page">
-  <header class="page-hero reveal">
-    <p class="eyebrow">Evidence &amp; research</p>
-    <h1>Sources</h1>
-    <p class="page-hero-sub">This project draws on peer-reviewed and government health authorities. Content has been paraphrased and summarised in the author's own words for a Year 9 audience.</p>
-  </header>
-
-  <section class="section-block reveal">
-    <div class="source-list">
-      <div class="source-item glass">
-        <h3>World Health Organization (WHO)</h3>
-        <p>Used for global disease data, vaccination guidance, antibiotic resistance information, and COVID-19 background. <span class="source-url">who.int</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>U.S. Centers for Disease Control and Prevention (CDC)</h3>
-        <p>Used for hand hygiene research and statistics, immune system explanations, and vaccine safety information. <span class="source-url">cdc.gov</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>Australian Government Department of Health</h3>
-        <p>Used for the Australian immunisation schedule and local public health recommendations. <span class="source-url">health.gov.au</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>Better Health Channel (Victoria)</h3>
-        <p>Used for accessible explanations of the immune system, healthy lifestyle habits, and disease prevention suited to a general audience. <span class="source-url">betterhealth.vic.gov.au</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>Mayo Clinic</h3>
-        <p>Used for detailed medical explanations of white blood cell types, antibodies, and vaccine mechanisms. <span class="source-url">mayoclinic.org</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>Children's Hospital resources</h3>
-        <p>Used for age-appropriate explanations of vaccines and the immune system aimed at younger audiences. <span class="source-url">chop.edu / rch.org.au</span></p>
-      </div>
-      <div class="source-item glass">
-        <h3>The Qur'an &amp; authenticated Hadith collections (Sahih al-Bukhari, Sahih Muslim)</h3>
-        <p>Used for the Islam &amp; Health chapter, referencing well-known, authenticated (sahih) hadith and Qur'anic verses widely cited by Islamic scholars in relation to cleanliness and health.</p>
-      </div>
-    </div>
-
-    <div class="disclaimer-box glass">
-      <h3>A note on accuracy</h3>
-      <p>This is a student science fair project created for educational purposes. Every effort has been made to accurately represent information from the sources above, but this site should not be used as medical advice. For personal health decisions, always consult a qualified healthcare professional.</p>
-    </div>
-  </section>
-</section>
-
 </main>
 
-<!-- ============ FOOTER ============ -->
-<footer class="site-footer">
-  <p>Built for a Year 9 Science Fair &middot; How the Immune System Protects the Human Body &amp; Disease Prevention</p>
-  <p class="footer-small">All content paraphrased from cited public health &amp; religious sources. Not medical advice.</p>
+<footer>
+  <p>© 2026 Immune Shield — Year 9 Science Fair (COVID-19 only)</p>
 </footer>
-
-<script src="script.js"></script>
 </body>
 </html>
